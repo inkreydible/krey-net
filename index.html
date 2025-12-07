@@ -1,30 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Sets the character encoding so special characters (like ’) don't break -->
-  <meta charset="UTF-8">
-
-  <!-- Title shown on browser tab -->
-  <title>krey’s corner – gateway</title>
-
-  <!-- Makes page responsive on phones -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Loads your main CSS file for styling -->
+  <meta charset="UTF-8">  <!-- Sets the character encoding so special characters (like ’) don't break -->
+  <title>krey’s corner – gateway</title>  <!-- Title shown on browser tab -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Makes page responsive on phones -->
   <link rel="stylesheet" href="style.css">
 </head>
 
-<!-- 
-  The landing-body class activates special background effects
-  (scanlines / orbs / animations depending on your CSS).
--->
 <body class="landing-body">
-
-  <!-- Wrapper to center the card on the page -->
-  <div class="landing-wrapper">
-
-    <!-- The main card users see on load (your mini linktree) -->
-    <div class="landing-card">
+  <div class="landing-wrapper"> <!-- Wrapper to center the card on the page -->
+    <div class="landing-card">  <!-- The main card users see on load (your mini linktree) -->
 
       <!-- Site title -->
       <h1>krey’s corner</h1>
@@ -32,15 +17,42 @@
         welcome to my tiny slice of the web!
       </p>
 
-      <!-- ========================== -->
-      <!--        LINKTREE BUTTONS     -->
-      <!-- ========================== -->
-      <!-- Replace these with your real social media links. -->
+      <!--   SOCIAL ICON ROW (small)  -->
+      <div class="landing-social">
+        <!-- email -->
+        <a href="mailto:krey@outlook.com" class="social-icon" aria-label="Email">
+          ✉
+        </a>
+
+        <!-- instagram -->
+        <a href="https://instagram.com/in.krey.dible" target="_blank" class="social-icon" aria-label="Instagram">
+          <span class="social-icon-text">IG</span>
+        </a>
+
+        <!-- linkedin -->
+        <a href="https://linkedin.com/in/krey-daniel" target="_blank" class="social-icon" aria-label="LinkedIn">
+          in
+        </a>
+
+        <!-- discord -->
+        <a href="https://discordapp.com/users/yourid" target="_blank" class="social-icon" aria-label="Discord">
+          ☁
+        </a>
+
+        <!-- spotify -->
+        <a href="https://open.spotify.com/user/youruser" target="_blank" class="social-icon" aria-label="Spotify">
+          ♫
+        </a>
+      </div>
+
+      <!--     MAIN LINK BUTTONS      -->
       <div class="landing-links">
-        <a href="https://your-instagram-link-here" target="_blank" class="link-pill">instagram</a>
-        <a href="https://your-linkedin-here" target="_blank" class="link-pill">linkedin</a>
-        <a href="https://your-github-here" target="_blank" class="link-pill">github</a>
-        <a href="https://other-site-or-form" target="_blank" class="link-pill">something else</a>
+        <a href="https://your-portfolio-link" target="_blank" class="link-pill">my portfolio (wip)</a>
+        <a href="https://your-resume-link" target="_blank" class="link-pill">my resume</a>
+        <a href="https://your-blog-link" target="_blank" class="link-pill">my blog</a>
+        <a href="https://anilist.co/user/youruser" target="_blank" class="link-pill">my anilist</a>
+        <a href="https://your-watchlist-link" target="_blank" class="link-pill">my watchlist (wip)</a>
+        <a href="https://steamcommunity.com/id/youruser" target="_blank" class="link-pill">my steam</a>
       </div>
 
       <!-- "Enter site" button that leads to your main homepage -->

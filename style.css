@@ -403,6 +403,47 @@ a:hover {
   margin-bottom: 18px;
 }
 
+/* small social icon row on landing page */
+.landing-social {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 16px; /* space before big buttons */
+}
+
+/* base icon button */
+.social-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid #ff4b4b;          /* match your red accent if you want */
+  background: #050516;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  text-decoration: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out,
+              background 0.15s ease-out, color 0.15s ease-out;
+}
+
+/* text inside icon if you use letters like IG, in, etc. */
+.social-icon-text {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+}
+
+/* hover effect */
+.social-icon:hover {
+  background: #ff4b4b;
+  color: #050516;
+  transform: translateY(-1px) scale(1.05);
+  box-shadow: 0 0 14px rgba(255, 75, 75, 0.7);
+}
+
 .link-pill {
   display: block;               /* full-width clickable area */
   text-decoration: none;
