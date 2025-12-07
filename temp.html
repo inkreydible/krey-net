@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Sets the character encoding so special characters (like ’) don't break -->
+  <meta charset="UTF-8">
+
+  <!-- Title shown on browser tab -->
+  <title>krey’s corner – gateway</title>
+
+  <!-- Makes page responsive on phones -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Loads your main CSS file for styling -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- 
+  The landing-body class activates special background effects
+  (scanlines / orbs / animations depending on your CSS).
+-->
+<body class="landing-body">
+
+  <!-- Wrapper to center the card on the page -->
+  <div class="landing-wrapper">
+
+    <!-- The main card users see on load (your mini linktree) -->
+    <div class="landing-card">
+
+      <!-- Site title -->
+      <h1>krey’s corner</h1>
+      <p class="landing-subtitle">
+        welcome to my tiny slice of the web!
+      </p>
+
+      <!-- ========================== -->
+      <!--        LINKTREE BUTTONS     -->
+      <!-- ========================== -->
+      <!-- Replace these with your real social media links. -->
+      <div class="landing-links">
+        <a href="https://your-instagram-link-here" target="_blank" class="link-pill">instagram</a>
+        <a href="https://your-linkedin-here" target="_blank" class="link-pill">linkedin</a>
+        <a href="https://your-github-here" target="_blank" class="link-pill">github</a>
+        <a href="https://other-site-or-form" target="_blank" class="link-pill">something else</a>
+      </div>
+
+      <!-- "Enter site" button that leads to your main homepage -->
+      <a href="home.html" class="enter-btn" id="enter-btn">
+        ✦ enter site ✦
+      </a>
+    </div>
+  </div>
+
+  <!-- ======================================================= -->
+  <!--    HIDDEN YOUTUBE PLAYER (actual audio source)          -->
+  <!-- ======================================================= -->
+  <!-- This is the invisible <iframe> that plays your music.
+       The YouTube API attaches itself to this div and turns
+       it into a hidden video player. -->
+  <div id="yt-hidden-player"></div>
+
+
+  <!-- Loads the official YouTube IFrame Player API -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+
+  <!-- Hidden YouTube player -->
+  <div id="yt-hidden-player"></div>
+  
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script>
+    let player;
+    let hasStarted = false;
+  
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('yt-hidden-player', {
+        height: '1',
+        width: '1',
+        videoId: 'utYouad0v5E', // your track
+        playerVars: {
+          autoplay: 0,  // must be 0 — browser blocks autoplay without gesture
+          controls: 0,
+          disablekb: 1,
+          modestbranding: 1,
+          playsinline: 1,
+          loop: 1,
+          playlist: 'utYouad0v5E'
+        }
+      });
+    }
+  
+    // Start playing as soon as the user clicks ANYWHERE on the page
+    function startMusic() {
+      if (hasStarted || !player) return;
+      hasStarted = true;
+      try { player.playVideo(); } catch (e) {}
+      document.removeEventListener('click', startMusic);
+    }
+  
+    document.addEventListener('click', startMusic);
+  </script>
+
+</body>
+</html>
