@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>krey’s corner – home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-wrapper">
+    <header class="site-header">
+      <div class="site-title">
+        <h1>krey's corner</h1>
+        <p>personal site / hub</p>
+      </div>
+
+      <nav class="top-nav">
+        <a href="home.html">home</a>
+        <a href="portfolio.html">portfolio</a>
+        <a href="blog.html">blog</a>
+        <a href="index.html">link page</a>
+      </nav>
+    </header>
+
+    <main class="site-main">
+      <aside class="sidebar">
+        <!-- you can reuse the cards from before (status, nav, buttons) -->
+        <section class="card">
+          <h2>status</h2>
+          <p><span class="label">mood:</span> 🌱 reorganizing my life systems</p>
+          <p><span class="label">listening:</span> indie / game OSTs</p>
+          <p><span class="label">brainrot:</span> health informatics + design</p>
+        </section>
+        
+        <!-- NEW: background music card -->
+        <section class="card">
+          <h2>background music</h2>
+    
+          <!-- reuse the same block you already have on index.html -->
+          <div class="landing-audio">
+            <p class="landing-music-label">background music:</p>
+    
+            <div class="audio-controls">
+              <button id="audio-play" class="audio-btn">▶ play</button>
+              <button id="audio-pause" class="audio-btn">⏸ pause</button>
+            </div>
+    
+            <p class="landing-music-hint">
+              (plays a YouTube track quietly in the background)
+            </p>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>site nav</h2>
+          <ul>
+            <li><a href="#about">about me</a></li>
+            <li><a href="#now">what i'm doing</a></li>
+            <li><a href="portfolio.html">portfolio</a></li>
+            <li><a href="blog.html">blog</a></li>
+          </ul>
+        </section>
+      </aside>
+
+      <section class="content">
+        <section id="about" class="card">
+          <h2>about me</h2>
+          <p>
+            hi, i'm <strong>krey</strong> — biology / tech / design gremlin who likes
+            systems, puzzles, and building small cozy things (like this site).
+          </p>
+          <p>
+            this page is the hub: general info, current obsessions, and how to find me elsewhere.
+          </p>
+        </section>
+
+        <section id="now" class="card">
+          <h2>what i'm doing now</h2>
+          <ul>
+            <li>📚 studying & surviving school</li>
+            <li>🧪 poking at neuro + health data things</li>
+            <li>🎨 doing design & creative direction for student org stuff</li>
+            <li>🧠 thinking way too much about careers and meaning</li>
+          </ul>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> krey • hosted on <a href="https://neocities.org" target="_blank">neocities</a></p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Hidden YouTube player used for background music -->
+  <div id="yt-hidden-player"></div>
+  
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script>
+    // invisible YouTube player instance
+    let player;
+  
+    // Called automatically by the YouTube IFrame API when it loads
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('yt-hidden-player', {
+        height: '1',
+        width: '1',
+        videoId: '4fNrolHxV-g',      // <- your YouTube video ID
+        playerVars: {
+          loop: 1,
+          playlist: '4fNrolHxV-g'    // <- same ID again so looping works
+        }
+      });
+    }
+  
+    // helper so we don't crash if the player isn't ready yet
+    function safeCall(action) {
+      if (!player || typeof player[action] !== 'function') return;
+      try { player[action](); } catch (e) {}
+    }
+  
+    // wire up the buttons once the DOM is ready
+    document.addEventListener('DOMContentLoaded', function () {
+      const playBtn = document.getElementById('audio-play');
+      const pauseBtn = document.getElementById('audio-pause');
+  
+      if (playBtn) {
+        playBtn.addEventListener('click', function () {
+          safeCall('playVideo');
+        });
+      }
+  
+      if (pauseBtn) {
+        pauseBtn.addEventListener('click', function () {
+          safeCall('pauseVideo');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>krey’s corner – portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-wrapper">
+    <header class="site-header">
+      <div class="site-title">
+        <h1>krey's corner</h1>
+        <p>portfolio</p>
+      </div>
+
+      <nav class="top-nav">
+        <a href="home.html">home</a>
+        <a href="portfolio.html">portfolio</a>
+        <a href="blog.html">blog</a>
+        <a href="index.html">link page</a>
+      </nav>
+    </header>
+
+    <main class="site-main">
+      <aside class="sidebar">
+        <section class="card">
+          <h2>about</h2>
+          <p>projects & work i’m comfortable showing the internet.</p>
+        </section>
+      </aside>
+
+      <section class="content">
+        <section class="card">
+          <h2>featured projects</h2>
+          <ul class="project-list">
+            <li>
+              <span class="project-title">Example Project 1</span>
+              <span class="project-tag">ui/ux</span>
+              <p class="project-desc">
+                short description + maybe a link to figma / github / pdf.
+              </p>
+            </li>
+            <li>
+              <span class="project-title">Example Project 2</span>
+              <span class="project-tag">research</span>
+              <p class="project-desc">
+                small summary of what you did, your role, and impact.
+              </p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <h2>skills</h2>
+          <ul>
+            <li>design: figma, creative direction, ui/ux basics</li>
+            <li>science: biology, neuro, health data vibes</li>
+            <li>tech: web basics (html/css/js), data tools</li>
+          </ul>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> krey</p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

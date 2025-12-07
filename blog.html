@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>krey’s corner – blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-wrapper">
+    <header class="site-header">
+      <div class="site-title">
+        <h1>krey's corner</h1>
+        <p>blog</p>
+      </div>
+
+      <nav class="top-nav">
+        <a href="home.html">home</a>
+        <a href="portfolio.html">portfolio</a>
+        <a href="blog.html">blog</a>
+        <a href="index.html">link page</a>
+      </nav>
+    </header>
+
+    <main class="site-main">
+      <aside class="sidebar">
+        <section class="card">
+          <h2>about this blog</h2>
+          <p>life logs, design notes, tech / med brainrot, etc.</p>
+        </section>
+      </aside>
+
+      <section class="content">
+        <section class="card">
+          <h2>posts</h2>
+          <ul>
+            <li><strong>coming soon</strong> – i’ll add posts when i feel like yelling into the void.</li>
+            <!-- later:
+            <li><a href="blog/post-1.html">post title #1</a> – short one-liner description.</li>
+            -->
+          </ul>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> krey</p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
