@@ -356,14 +356,15 @@ a:hover {
   min-height: 100vh;                               /* full viewport height */
   font-family: var(--font-main);
   color: var(--text);
-  background:                                      /* similar gradient to main body */
-    radial-gradient(circle at top, #3b82f6 0, transparent 55%),
-    radial-gradient(circle at bottom, #ec4899 0, transparent 55%),
-    var(--bg);
-  background-attachment: fixed;
   display: flex;                                   /* center wrapper */
   align-items: center;
   justify-content: center;
+
+  background-image: linear-gradient(to bottom, rgba(80, 136, 168, 0) 40%, rgb(255, 255, 255) 100%), url("img/bg/daikoglobal3.png");
+    background-attachment: fixed;
+    display: block;
+    font-family: MS PGothic;
+    text-align: center;
 }
 
 .landing-wrapper {
