@@ -415,7 +415,6 @@ a:hover {
 .social-icon {
   width: 34px;
   height: 34px;
-  border-radius: 999px;
   border: 1px solid #ff4b4b;          /* match your red accent if you want */
   background: #050516;
   color: #ffffff;
